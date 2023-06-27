@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename='/Shortly-url-shortener/'>
+    <BrowserRouter basename='/Shortly-url-shortener'>
       <App />
     </BrowserRouter>
   </React.StrictMode>
