@@ -6,10 +6,6 @@ import Result from '../Result/Result';
 const Results = () => {
   const { results } = useContext(ShortenUrlContext);
 
-  useEffect(() => {
-    console.log(results)
-  }, [results])
-
   return (
     <div className={styles.container}>
       {results.map(result => (

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
 export const ShortenUrlContext = createContext();
 
@@ -10,6 +10,18 @@ export const ShortenUrlProvider = ({ children }) => {
   const [isUrlInvalid, setIsUrlInvalid] = useState(false);  // validity state
 
   // check local storage
+  useEffect(() => {
+    const localStorageResults = localStorage.getItem('shortlyResults');
+    if (localStorageResults) {
+      setResults(JSON.parse(localStorageResults));
+    }
+  }, [])
+
+  useEffect(() => {
+    if (results.length > 0) {
+      localStorage.setItem('shortlyResults', JSON.stringify(results));
+    }
+  }, [results])
 
   // input handler
   const inputHandler = (e) => {
@@ -70,10 +82,8 @@ export const ShortenUrlProvider = ({ children }) => {
 
   function initialUrlCheck() {
     const isSameUrl = inputUrl === prevInputUrl; // compare the inputUrl to prevInputUrl
-    const _inputUrl = (inputUrl.includes('https://')) ? inputUrl : 'https://'.concat(inputUrl); 
+    const _inputUrl = (inputUrl.includes('https://')) ? inputUrl : 'https://'.concat(inputUrl);
     const alreadyExists = results.some(result => result.original_link == _inputUrl);
-
-    console.log('Initial check: '+ isSameUrl || alreadyExists);
 
     return isSameUrl || alreadyExists;
   }
