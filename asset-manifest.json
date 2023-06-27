@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Shortly-url-shortener/static/css/main.405df041.css",
-    "main.js": "/Shortly-url-shortener/static/js/main.7db557b2.js",
+    "main.js": "/Shortly-url-shortener/static/js/main.b41494e0.js",
     "static/media/Poppins-Regular.ttf": "/Shortly-url-shortener/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Medium.ttf": "/Shortly-url-shortener/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
     "static/media/Poppins-Bold.ttf": "/Shortly-url-shortener/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
@@ -19,10 +19,10 @@
     "static/media/icon-facebook.svg": "/Shortly-url-shortener/static/media/icon-facebook.229c75a01827343aef31ae916e2ec18a.svg",
     "static/media/bg-shorten-mobile.svg": "/Shortly-url-shortener/static/media/bg-shorten-mobile.41c34b33a14a3077e506.svg",
     "main.405df041.css.map": "/Shortly-url-shortener/static/css/main.405df041.css.map",
-    "main.7db557b2.js.map": "/Shortly-url-shortener/static/js/main.7db557b2.js.map"
+    "main.b41494e0.js.map": "/Shortly-url-shortener/static/js/main.b41494e0.js.map"
   },
   "entrypoints": [
     "static/css/main.405df041.css",
-    "static/js/main.7db557b2.js"
+    "static/js/main.b41494e0.js"
   ]
 }
