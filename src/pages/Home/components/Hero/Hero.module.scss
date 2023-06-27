@@ -1,0 +1,123 @@
+@use 'assets/styles/include-media.scss' as *;
+
+.container {
+  padding: 9.125rem 0 13.875rem;
+  background-color: var(--c-white);
+
+  @include media('<=434px') {
+    padding-top: 8.125rem;
+  }
+
+  @include media('<=375px') {
+    padding-top: 6.125rem;
+  }
+
+  .wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+
+    // LAYOUT ON MOBILE
+    @include media('<=633px') {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.5rem;
+
+      .content {
+        order: 2;
+      }
+
+      .illustration {
+        order: 1;
+      }
+    }
+
+    @include media('<=375px') {
+      gap: 2rem;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @include media('<=633px') {
+        align-items: center;
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 3px;
+        color: var(--c-neutral-800);
+        font-size: clamp(3rem, 7vw, 4.5rem);
+        line-height: 1.13;
+      }
+
+      p {
+        margin-bottom: 2.5rem;
+        max-width: 500px;
+        color: var(--c-neutral-500);
+        font-size: clamp(0.875rem, 2vw, 1.25rem);
+        font-weight: 500;
+
+        @include media('<=912px') {
+          margin-bottom: 1.75rem;
+        }
+
+        @include media('<=633px') {
+          max-width: 400px;
+          font-size: 1.125rem;
+        }
+      }
+
+      a {
+        font-size: 1.125rem;
+        font-size: clamp(0.875rem, 2vw, 1.25rem);
+
+        @include media('<=633px') {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .illustration {
+      @include media('<=633px') {
+        position: relative;
+      }
+
+      img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 733px;
+        aspect-ratio: 111/73;
+
+        @include media('<=912px') {
+          width: 600px;
+        }
+
+        @include media('<=810px') {
+          width: 500px;
+        }
+
+        @include media('<=633px') {
+          top: unset;
+          left: 50%;
+          bottom: 0;
+          transform: translate(-35%, 0);
+          min-width: 551px;
+        }
+        @include media('<=414px') {
+          // left: 0;
+          // transform: translate(0);
+          min-width: 520px;
+        }
+
+        @include media('<=375px') {
+          transform: translate(-33%, 0);
+          min-width: 500px;
+        }
+      }
+    }
+  }
+}

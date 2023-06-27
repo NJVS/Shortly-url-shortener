@@ -1,0 +1,171 @@
+@use 'assets/styles/include-media.scss' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .pre_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 3.575rem 0;
+    background: var(--c-violet) url('/assets/images/bg-boost-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    h2 {
+      color: var(--c-white);
+      text-align: center;
+    }
+
+    a {
+      font-size: 1.125rem;
+      // font-weight: 700;
+    }
+  }
+
+  .main_footer {
+    padding: 3.575rem 0;
+    background-color: var(--c-neutral-900);
+
+    // LAYOUT
+    // .inner {
+    //   display: grid;
+    //   grid-template-columns: auto 1fr auto;
+    //   align-items: start;
+    //   gap: 2.5rem 6.125rem;
+
+    //   .logo {
+    //     display: flex;
+    //   }
+
+    //   .pages {
+    //     flex-grow: 1;
+    //     display: flex;
+    //     justify-content: flex-end;
+    //     gap: 6rem;
+    //   }
+
+    //   @include media('<1074px') {
+    //     grid-template-columns: 1fr 1fr;
+    //     grid-template-areas:
+    //       "logo socmed"
+    //       "pages pages";
+
+    //     .logo {
+    //       grid-area: logo;
+    //     }
+
+    //     .pages {
+    //       grid-area: pages;
+    //       justify-content: center;
+    //       text-align: center;
+    //     }
+
+    //     .socmed {
+    //       grid-area: socmed;
+    //       justify-content: flex-end;
+    //     }
+    //   }
+    // }
+
+    .inner {
+      display: flex;
+      gap: 2.5rem 6.125rem;
+
+      @include media('<1074px') {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+
+    .logo {
+      display: flex;
+
+      svg>path {
+        fill: var(--c-white);
+        transition: fill 0.2s ease;
+      }
+
+      &:hover svg>path {
+        fill: var(--c-cyan);
+      }
+    }
+
+    .pages {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 6rem;
+
+      @include media('<1074px') {
+        justify-content: space-between;
+        gap: unset;
+        width: min(450px, 100%);
+        margin-left: -2rem;
+        text-align: center;
+      }
+
+      // @include media('<476px') {
+      //   flex-direction: column;
+      //   gap: 2rem 0;
+      //   margin: 0;
+      // }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        list-style-type: none;
+
+        h5 {
+          display: block;
+          color: var(--c-white);
+          font-size: 0.875rem;
+          margin-bottom: 0.75rem;
+        }
+
+        a {
+          color: var(--c-neutral-400);
+          font-family: var(--ff-primary);
+          font-size: 0.875rem;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: var(--c-cyan);
+          }
+        }
+      }
+    }
+
+    .socmed {
+      display: flex;
+      align-items: center;
+      align-items: flex-start;
+      gap: 1.5rem;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        a {
+          display: flex;
+
+          svg>path {
+            transition: fill 0.2s ease;
+          }
+
+          &:hover svg>path {
+            fill: var(--c-cyan);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+:root {
+  --ff-primary: 'Poppins', sans-serif;
+
+
+  /**
+   * COLORS
+   */
+  // BASE
+  --c-white: hsl(0, 0%, 100%);
+  --c-black: hsl(0, 0%, 0%);
+  // THEME
+  --c-cyan: hsl(180, 66%, 49%);
+  --c-cyan-accent: hsla(180, 66%, 49%, 0.6);
+  --c-violet: hsl(257, 27%, 26%);
+  --c-red: hsl(0, 87%, 67%);
+  --c-red-accent: hsla(0, 87%, 67%, 0.6);
+  // NEUTRAL 
+  --c-neutral-100: hsl(225, 33%, 95%);
+  --c-neutral-400: hsl(0, 0%, 75%);
+  --c-neutral-500: hsl(257, 7%, 63%);
+  --c-neutral-800: hsl(255, 11%, 22%);
+  --c-neutral-900: hsl(260, 8%, 14%);
+}

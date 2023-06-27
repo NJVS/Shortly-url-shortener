@@ -1,0 +1,17 @@
+@use './reset.scss';
+@use './fonts.scss';
+@use './variables.scss';
+@use './include-media.scss';
+@use './typography.scss';
+
+/* root element */
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+
+  > main {
+    flex-grow: 1;
+  }
+}

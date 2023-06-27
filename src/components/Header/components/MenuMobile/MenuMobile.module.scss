@@ -1,0 +1,49 @@
+@use 'assets/styles/include-media.scss' as *;
+
+.container {
+  position: absolute;
+  top: calc(100% + 1rem);
+  right: 0;
+  padding: 2.5rem 1.5rem;
+  width: min(350px, 100%);
+  background-color: var(--c-violet);
+  border-radius: 8px;
+  text-align: center;
+  z-index: 999;
+  clip-path: circle(0% at 100% 0%);
+  transition: clip-path 0.3s ease-in-out;
+
+  @include media('<=412px') {
+    width: 100%;
+  }
+
+  &.toggled {
+    clip-path: circle(70%);
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    list-style-type: none;
+
+    a {
+      font-size: 1.125rem;
+      font-weight: 700;
+
+      &.menu_item {
+        color: var(--c-white);
+        font-family: var(--ff-primary);
+        text-decoration: none;
+
+        &[aria-current=page] {
+          color: var(--c-cyan);
+        }
+      }
+    }
+
+    hr {
+      margin: 0;
+    }
+  }
+}

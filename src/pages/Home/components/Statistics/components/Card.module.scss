@@ -1,0 +1,126 @@
+@use 'assets/styles/include-media.scss' as *;
+
+.container {
+  position: relative;
+  height: 100%;
+  padding: 4.8rem 2rem 2.375rem;
+  background-color: var(--c-white);
+  border-radius: 5px;
+  z-index: 1;
+
+  &:first-of-type {
+    margin-top: -2.75rem;
+
+    @include media('<=794px') {
+      margin-top: unset;
+    }
+  }
+
+  &:last-of-type {
+    margin-top: 2.75rem;
+
+    @include media('<=794px') {
+      margin-top: unset;
+    }
+  }
+
+  @include media('<=1083px', '>894px') {
+    padding: 3.5rem 1.5rem 2rem;
+  }
+
+  @include media('<=894px', '>794px') {
+    padding: 2.875rem 1.25rem 2rem;
+  }
+
+
+  @include media('<=794px', '>608px') {
+    padding: 4rem 2rem 2.375rem;
+    min-width: 250px;
+    max-width: 300px;
+    height: auto;
+  }
+
+  @include media('<=414px') {
+    width: 100%;
+    padding: 4.8rem 1.5rem 2.375rem;
+    text-align: center;
+  }
+
+  .icon_wrapper {
+    position: absolute;
+    top: 0;
+    left: 32px;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    width: 88px;
+    aspect-ratio: 1/1;
+    background-color: var(--c-violet);
+    border-radius: 50vh;
+
+    img {
+      width: 40px;
+    }
+
+    @include media('<=1083px', '>894px') {
+      left: 1.5rem;
+      width: 78px;
+
+      img {
+        width: 30px;
+      }
+    }
+
+    @include media('<=894px', '>794px') {
+      left: 1.25rem;
+      width: 63px;
+
+      img {
+        width: 25px;
+      }
+    }
+
+    @include media('<=414px') {
+      left: 50%;
+      translate: -50% 0;
+    }
+  }
+
+  &:last-of-type .icon_wrapper img {
+    width: 48px;
+
+    @include media('<=1083px', '>894px') {
+      width: 43px;
+    }
+
+    @include media('<=894px', '>794px') {
+      width: 28px;
+    }
+  }
+
+  h4 {
+    margin-bottom: 1rem;
+    color: var(--c-violet);
+    font-size: 1.375rem;
+    
+    @include media('<=976px', '>608px') {
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  p {
+    color: var(--c-neutral-500);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.75;
+    
+    @include media('<=976px', '>608px') {
+      font-size: clamp(0.75rem, 1.5vw, 0.9375rem);
+    }
+
+    @include media('<=608px') {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use 'assets/styles/include-media.scss' as *;
+
+.container {
+
+	.wrapper {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2.75rem;
+		padding-top: 3rem;
+	}
+
+	.logo {
+		display: flex;
+	}
+}

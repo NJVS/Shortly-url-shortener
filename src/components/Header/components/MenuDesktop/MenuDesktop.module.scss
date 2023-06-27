@@ -1,0 +1,37 @@
+.container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .menu_wrapper {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+
+    &:first-child {
+      gap: 1.875rem;
+    }
+
+    &:last-child {
+      gap: 2.375rem;
+    }
+
+    a.menu_item {
+      color: var(--c-neutral-500);
+      font-family: var(--ff-primary);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--c-neutral-900)
+      }
+
+      &[aria-current=page] {
+        color: var(--c-cyan);
+      }
+    }
+  }
+}

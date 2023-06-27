@@ -1,0 +1,77 @@
+@use 'assets/styles/include-media.scss' as *;
+
+.container {
+  padding: 5rem 0;
+  background-color: var(--c-neutral-100);
+
+  .header {
+    margin: auto;
+    margin-bottom: 9.125rem;
+    max-width: 32.375rem;
+    text-align: center;
+
+    @include media('<=794px') {
+      margin-bottom: 5.125rem;
+    }
+
+    h2 {
+      font-size: clamp(1.825rem, 4vw, 2.25rem);
+      color: var(--c-neutral-800);
+    }
+
+    p {
+      color: var(--c-neutral-500);
+      font-size: clamp(0.875rem, 2vw, 1.125rem);
+      font-weight: 500;
+
+      @include media('<=608px') {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .body {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // align-items: center;
+    gap: 4rem 1.875rem;
+
+    &>*:not(.bg_line) {
+      flex: 1;
+    }
+
+    @include media('<=1083px', '>794px') {
+      flex-wrap: nowrap;
+      gap: 4rem 1.125rem;
+    }
+
+    @include media('<=608px') {
+      flex-direction: column;
+    }
+  }
+
+  .bg_line {
+    position: absolute;
+    top: 104px;
+    width: 80%;
+    height: 8px;
+    background-color: var(--c-cyan);
+    border: none;
+
+    @include media('<=608px') {
+      top: 0;
+      left: 4.5rem;
+      width: 8px;
+      height: 80%;
+    }
+
+    @include media('<=414px') {
+      top: 0;
+      left: calc(50% - 4px);
+      width: 8px;
+      height: 80%;
+    }
+  }
+}

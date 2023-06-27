@@ -1,0 +1,100 @@
+@use 'assets/styles/include-media.scss' as *;
+
+.container {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--c-white);
+  padding: 1rem 1.5rem;
+  border-radius: 0.375rem;
+  overflow: hidden;
+
+  @include media('<=633px') {
+    grid-template-columns: 1fr;
+  }
+
+  .full_link {
+    font-weight: 500;
+    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+    word-break: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include media('<=633px') {
+      font-size: 1rem;
+    }
+  }
+
+  >div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+
+    // border top
+    &::before {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150%;
+      height: 2px;
+      background-color: var(--c-neutral-100);
+
+      @include media('<=633px') {
+        display: block;
+      }
+    }
+
+    @include media('<=633px') {
+      flex-direction: column;
+      align-items: unset;
+      padding-top: 1rem;
+    }
+
+    a.short_link {
+      color: var(--c-cyan);
+      font-family: var(--ff-primary);
+      font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include media('<=633px') {
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      @include media('<=414px') {
+        text-align: start;
+      }
+    }
+
+    .btn_copy {
+      font-size: 0.875rem;
+      padding: 0.5em 1.875em;
+      border-radius: 5px;
+
+      &.copied {
+        background-color: var(--c-violet);
+      }
+
+      @include media('<=633px') {
+        display: block;
+        width: 100%;
+      }
+    }
+
+
+
+    @include media('<=414px') {}
+  }
+}
